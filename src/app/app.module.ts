@@ -9,6 +9,8 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatListModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
