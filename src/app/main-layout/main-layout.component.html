@@ -1,20 +1,20 @@
 <mat-toolbar id="app-toolbar">
-  <button mat-icon-button>
-    <mat-icon aria-hidden="false" aria-label="toggle menu button">menu</mat-icon>
+  <button mat-icon-button (click)="toggleSideMenu()">
+    <mat-icon>menu</mat-icon>
   </button>
   <span>Proyecciones</span>
 </mat-toolbar>
 
 <mat-sidenav-container id="app-body">
-  <mat-sidenav opened disableClose mode="side" id="app-side-menu">
+  <mat-sidenav [opened]="sideMenuVisible" disableClose mode="side" id="app-side-menu">
     <mat-nav-list>
-      <div *ngFor="let link of links">
+      <ng-template ngFor let-link [ngForOf]="links">
         <a mat-list-item *ngIf="link.type=='item'" href="/{{link.path}}">
-          <mat-icon matListIcon>{{link.icon}}</mat-icon>
-          <span matline>{{link.label}}</span>
+          <mat-icon mat-list-icon class="material-icons-outlined">{{link.icon}}</mat-icon>
+          <div mat-line>{{link.label}}</div>
         </a>
         <mat-divider *ngIf="link.type=='divider'"></mat-divider>
-      </div>
+      </ng-template>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content id="app-content">
