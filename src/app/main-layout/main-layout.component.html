@@ -9,7 +9,8 @@
   <mat-sidenav [opened]="sideMenuVisible" disableClose mode="side" id="app-side-menu">
     <mat-nav-list>
       <ng-template ngFor let-link [ngForOf]="links">
-        <a mat-list-item *ngIf="link.type=='item'" href="/{{link.path}}">
+        <a mat-list-item *ngIf="link.type=='item'" routerLink="{{link.path}}" routerLinkActive="selected">
+          <mat-icon mat-list-icon class="active">{{link.icon}}</mat-icon>
           <mat-icon mat-list-icon class="material-icons-outlined">{{link.icon}}</mat-icon>
           <div mat-line>{{link.label}}</div>
         </a>
@@ -18,6 +19,6 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content id="app-content">
-    <span>Main</span>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
