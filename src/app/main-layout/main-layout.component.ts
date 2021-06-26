@@ -1,12 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 
+export interface Link {
+  type: string;
+  path?: string;
+  icon?: string;
+  label?: string;
+}
+
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit {
-  links = [
+  links: Link[] = [
     {type: 'item', path: 'home', icon: 'home', label: 'Inicio'},
     {type: 'item', path: 'events', icon: 'date_range', label: 'Eventos'},
     {type: 'item', path: 'praying-calendar', icon: 'notes', label: 'Calendario de oración'},
