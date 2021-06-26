@@ -1,11 +1,13 @@
-<mat-toolbar>
+<mat-toolbar id="app-toolbar">
   <button mat-icon-button>
     <mat-icon aria-hidden="false" aria-label="toggle menu button">menu</mat-icon>
   </button>
   <span>Proyecciones</span>
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav opened disableClose>Start</mat-sidenav>
-  <mat-sidenav-content>Main</mat-sidenav-content>
+<mat-sidenav-container id="app-body">
+  <mat-sidenav opened disableClose mode="side" id="app-side-menu">Start</mat-sidenav>
+  <mat-sidenav-content id="app-content">
+    <span>Main</span>
+  </mat-sidenav-content>
 </mat-sidenav-container>
