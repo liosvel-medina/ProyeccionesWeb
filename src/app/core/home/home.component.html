@@ -1,1 +1,50 @@
-<p>home works!</p>
+<div class="content-area">
+
+  <section>
+    <div class="row">
+      <!--    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">-->
+      <div class="col">
+        <mat-card id="today-reading-card">
+          <mat-card-title>Lectura Bíblica para hoy</mat-card-title>
+          <mat-card-subtitle>
+            Juan 3:16
+          </mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="col">
+        <h2 class="section-title">
+          Eventos para hoy
+          <button mat-flat-button mat-icon-button color="primary" routerLink="events">
+            <mat-icon>date_range</mat-icon>
+          </button>
+        </h2>
+      </div>
+    </div>
+
+    <div class="row section-content">
+
+      <ng-template ngFor let-todayEvent [ngForOf]="todayEvents">
+
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
+          <mat-card class="flat-colored-card h-100" mat-ripple [style.backgroundColor]="getColor(todayEvent)">
+            <mat-icon>landscape</mat-icon>
+            <mat-card-title>
+              {{todayEvent.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{todayEvent.participants}}
+            </mat-card-subtitle>
+          </mat-card>
+        </div>
+
+      </ng-template>
+
+    </div>
+  </section>
+
+</div>

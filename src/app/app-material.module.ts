@@ -7,6 +7,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatMenuModule} from "@angular/material/menu";
+import {MatCardModule} from "@angular/material/card";
+import {MatRippleModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import {MatMenuModule} from "@angular/material/menu";
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    MatCardModule,
+    MatRippleModule,
   ]
 })
 export class AppMaterialModule {
