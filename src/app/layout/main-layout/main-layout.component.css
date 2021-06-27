@@ -14,7 +14,12 @@
   height: 100%;
 }
 
-#app-side-menu, #app-content {
+#app-content {
+  top: 64px;
+  height: calc(100% - 64px);
+}
+
+#app-side-menu {
   padding-top: 64px;
 }
 
@@ -65,7 +70,12 @@ mat-divider {
 }
 
 @media (max-width: 599px) {
-  #app-side-menu, #app-content {
+  #app-side-menu {
     padding-top: 56px;
+  }
+
+  #app-content {
+    top: 56px;
+    height: calc(100% - 56px);
   }
 }
