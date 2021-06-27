@@ -8,13 +8,23 @@ import {DonateComponent} from "./core/donate/donate.component";
 import {MainLayoutComponent} from "./layout/main-layout/main-layout.component";
 import {AppMaterialModule} from "./app-material.module";
 import {CommonModule} from "@angular/common";
+import {EventsComponent} from "./core/events/events.component";
+import {PrayingCalendarComponent} from "./core/praying-calendar/praying-calendar.component";
+import {AnniversariesComponent} from "./core/anniversaries/anniversaries.component";
+import {DirectoryComponent} from "./core/directory/directory.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: '', component: MainLayoutComponent, children: [
       {path: 'home', component: HomeComponent},
+      {path: 'events', component: EventsComponent},
+      {path: 'praying-calendar', component: PrayingCalendarComponent},
+      {path: 'anniversaries', component: AnniversariesComponent},
+      {path: 'directory', component: DirectoryComponent},
+
       {path: 'settings', component: SettingsComponent},
+
       {path: 'terms', component: TermsComponent},
       {path: 'about', component: AboutComponent},
       {path: 'donate', component: DonateComponent},
