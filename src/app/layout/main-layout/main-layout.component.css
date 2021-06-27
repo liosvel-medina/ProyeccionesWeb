@@ -17,6 +17,7 @@
 #app-content {
   top: 64px;
   height: calc(100% - 64px);
+  background-color: #ffffff;
 }
 
 #app-side-menu {
