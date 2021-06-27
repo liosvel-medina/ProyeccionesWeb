@@ -5,11 +5,12 @@ import {SettingsComponent} from "./core/settings/settings.component";
 import {TermsComponent} from "./core/terms/terms.component";
 import {AboutComponent} from "./core/about/about.component";
 import {DonateComponent} from "./core/donate/donate.component";
-import {LoginComponent} from "./layout/login/login.component";
 import {MainLayoutComponent} from "./layout/main-layout/main-layout.component";
+import {AppMaterialModule} from "./app-material.module";
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: '', component: MainLayoutComponent, children: [
       {path: 'home', component: HomeComponent},
@@ -19,10 +20,23 @@ const routes: Routes = [
       {path: 'donate', component: DonateComponent},
     ]
   },
+  {path: '**', redirectTo: 'home'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [
+    MainLayoutComponent,
+    HomeComponent,
+    SettingsComponent,
+    TermsComponent,
+    AboutComponent,
+    DonateComponent,
+  ],
+  imports: [
+    RouterModule.forRoot(routes),
+    AppMaterialModule,
+    CommonModule,
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
