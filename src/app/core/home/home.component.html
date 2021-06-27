@@ -32,12 +32,69 @@
 
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
           <mat-card class="flat-colored-card h-100" mat-ripple [style.backgroundColor]="getColor(todayEvent)">
-            <mat-icon>landscape</mat-icon>
+            <mat-icon>{{getIcon(todayEvent)}}</mat-icon>
             <mat-card-title>
               {{todayEvent.name}}
             </mat-card-title>
             <mat-card-subtitle>
               {{todayEvent.participants}}
+            </mat-card-subtitle>
+          </mat-card>
+        </div>
+
+      </ng-template>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="col">
+        <h2 class="section-title">
+          Motivos de oración para hoy
+          <button mat-flat-button mat-icon-button color="primary" routerLink="praying-calendar">
+            <mat-icon>notes</mat-icon>
+          </button>
+        </h2>
+      </div>
+    </div>
+
+    <div class="row section-content">
+      <div class="col">
+
+        <div class="blockquote">
+          {{todayPrayingMotive}}
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="col">
+        <h2 class="section-title">
+          Aniversarios para hoy
+          <button mat-flat-button mat-icon-button color="primary" routerLink="anniversaries">
+            <mat-icon>cake</mat-icon>
+          </button>
+        </h2>
+      </div>
+    </div>
+
+    <div class="row section-content">
+
+      <ng-template ngFor let-todayAnniversary [ngForOf]="todayAnniversaries">
+
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
+          <mat-card class="flat-colored-card h-100" mat-ripple [style.backgroundColor]="eventColors['anniversary']">
+            <mat-icon>{{eventIcons['anniversary']}}</mat-icon>
+            <mat-card-title>
+              {{todayAnniversary.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{todayAnniversary.age}}
             </mat-card-subtitle>
           </mat-card>
         </div>
