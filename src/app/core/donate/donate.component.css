@@ -1,0 +1,39 @@
+.content-area {
+  padding: 30px;
+}
+
+p {
+  text-align: justify;
+}
+
+.logo {
+  width: 100px;
+}
+
+.credit-card-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 50px 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  user-select: none;
+  text-align: left;
+}
+
+.credit-card-button:hover {
+  background-color: rgba(0, 0, 0, 0.10);
+}
+
+.credit-card-button small, .credit-card-button b {
+  display: block;
+}
+
+.credit-card-button .mat-icon {
+  color: rgba(0, 0, 0, 0.70);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

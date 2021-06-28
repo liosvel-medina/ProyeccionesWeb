@@ -1,1 +1,36 @@
-<p>donate works!</p>
+<div class="content-area">
+
+  <div class="row">
+    <div class="col-12 offset-0 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+
+      <div class="text-center mb-4">
+        <img src="assets/img/logo_simple.svg" alt="Proyecciones" class="logo">
+      </div>
+
+      <p>
+        <b>Proyecciones</b> es una aplicación gratuita y nuestro plan, Dios mediante, es que siga siéndolo. Nos
+        proponemos brindar una alternativa al libro impreso y aprovechar las ventajas de la tecnología.
+      </p>
+
+      <p>
+        Si usted siente el deseo en su corazón, puede ayudar a que el proyecto siga creciendo realizando una
+        transferencia bancaria, a través de EnZona o Transfermóvil, a la tarjeta que se muestra a continuación.
+      </p>
+
+      <p>
+        Cualquier contribución, sin importar la cantidad, será de gran bendición y permitirá sostener parte de los
+        gastos que implica este trabajo.
+      </p>
+
+      <div class="text-center mt-4">
+        <div class="credit-card-button mb-4" mat-ripple (click)="copyToClipboard()">
+          <small>Número de la tarjeta</small>
+          <b>{{creditCard}}</b>
+          <mat-icon>content_copy</mat-icon>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
