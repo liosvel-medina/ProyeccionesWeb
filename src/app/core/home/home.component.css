@@ -32,6 +32,7 @@ section:first-of-type {
 .section-title {
   font-size: 24px;
   font-weight: 400;
+  margin-bottom: 24px;
 }
 
 .flat-colored-card {
@@ -64,8 +65,30 @@ section:first-of-type {
   color: rgba(255, 255, 255, 0.70) !important;
 }
 
+.flat-empty-card {
+  padding: 48px;
+  box-shadow: none;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.70) !important;
+}
+
+.flat-empty-card .mat-card-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  /*color: rgba(0, 0, 0, 0.70) !important;*/
+}
+
+.flat-empty-card .mat-icon {
+  font-size: 56px;
+  width: 56px;
+  height: 56px;
+  color: rgba(0, 0, 0, 0.35) !important;
+}
+
 .blockquote {
-  padding: 15px;
+  padding: 15px 30px;
   /*border-radius: 0 10px 10px 0;*/
   /*border-radius: 10px;*/
   border-radius: 3px 10px 10px 3px;
