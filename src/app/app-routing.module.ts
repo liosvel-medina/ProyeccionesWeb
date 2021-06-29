@@ -12,6 +12,7 @@ import {EventsComponent} from "./core/events/events.component";
 import {PrayingCalendarComponent} from "./core/praying-calendar/praying-calendar.component";
 import {AnniversariesComponent} from "./core/anniversaries/anniversaries.component";
 import {DirectoryComponent} from "./core/directory/directory.component";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -46,8 +47,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AppMaterialModule,
     CommonModule,
+    MatTooltipModule,
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+  ]
 })
 export class AppRoutingModule {
 }

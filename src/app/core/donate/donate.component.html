@@ -23,7 +23,10 @@
       </p>
 
       <div class="text-center mt-4">
-        <div class="credit-card-button mb-4" mat-ripple (click)="copyToClipboard()">
+        <div class="credit-card-button mb-4" mat-ripple (click)="copyToClipboard()"
+             matTooltip="Haga click para copiar"
+             matTooltipPosition="above"
+             aria-label="Button that copy the credit card number to clipboard">
           <small>Número de la tarjeta</small>
           <b>{{creditCard}}</b>
           <mat-icon>content_copy</mat-icon>
