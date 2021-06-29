@@ -1,0 +1,45 @@
+.content-area {
+  padding: 30px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.mat-icon-button img {
+  width: 24px;
+}
+
+.social-media a {
+  margin-left: 10px;
+}
+
+.social-media a:first-of-type {
+  margin-left: 0;
+}
+
+header h2 {
+  color: #466AFF;
+}
+
+header small, .lema small, .description small, .thanks small {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.70);
+}
+
+.quote {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #466AFF;
+  font-family: calligraffitti, fantasy;
+}
+
+a.contact-us {
+  border-radius: 50px;
+}
+
+@font-face {
+  font-family: calligraffitti;
+  src: url(src/assets/fonts/Calligraffitti-Regular.ttf);
+}
