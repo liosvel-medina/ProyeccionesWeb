@@ -23,7 +23,7 @@ p {
 }
 
 .credit-card-button:hover {
-  background-color: rgba(0, 0, 0, 0.10);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .credit-card-button small, .credit-card-button b {
