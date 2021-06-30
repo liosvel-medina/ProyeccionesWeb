@@ -13,6 +13,7 @@ import {PrayingCalendarComponent} from "./core/praying-calendar/praying-calendar
 import {AnniversariesComponent} from "./core/anniversaries/anniversaries.component";
 import {DirectoryComponent} from "./core/directory/directory.component";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {DailyReadingCalendarComponent} from "./core/daily-reading-calendar/daily-reading-calendar.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -29,6 +30,8 @@ const routes: Routes = [
       {path: 'terms', component: TermsComponent},
       {path: 'about', component: AboutComponent},
       {path: 'donate', component: DonateComponent},
+
+      {path: 'daily-reading-calendar', component: DailyReadingCalendarComponent},
     ]
   },
   {path: '**', redirectTo: 'home'},
@@ -42,6 +45,7 @@ const routes: Routes = [
     TermsComponent,
     AboutComponent,
     DonateComponent,
+    DailyReadingCalendarComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
