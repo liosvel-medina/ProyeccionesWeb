@@ -1,11 +1,5 @@
-#app-toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  /*background: linear-gradient(60deg, #f14736, #ffd800);*/
-  background-color: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+* {
+  box-sizing: border-box;
 }
 
 #app-body {
@@ -17,14 +11,38 @@
   height: 100%;
 }
 
-#app-content {
-  top: 64px;
-  height: calc(100% - 64px);
-  background-color: #ffffff;
+#app-content-panel {
+  /*overflow: hidden;*/
 }
 
 #app-side-menu {
-  padding-top: 64px;
+  width: 290px;
+  overflow: hidden;
+}
+
+.brand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#side-menu {
+  position: absolute;
+  top: 64px;
+  width: 100%;
+  height: calc(100% - 64px);
+  overflow: auto;
 }
 
 .mat-nav-list {
@@ -69,17 +87,39 @@ mat-divider {
   margin-bottom: 10px;
 }
 
+#app-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /*background: linear-gradient(60deg, #f14736, #ffd800);*/
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#app-content {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 64px);
+  background-color: #ffffff;
+  overflow: auto;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
 @media (max-width: 599px) {
-  #app-side-menu {
-    padding-top: 56px;
+
+  .brand {
+    height: 56px;
   }
 
-  #app-content {
+  #app-content, #side-menu {
     top: 56px;
     height: calc(100% - 56px);
   }
+
 }

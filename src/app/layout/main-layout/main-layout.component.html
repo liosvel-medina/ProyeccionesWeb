@@ -1,18 +1,12 @@
-<mat-toolbar id="app-toolbar">
-  <button mat-icon-button (click)="toggleSideMenu()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Proyecciones</span>
-  <!--  <span class="spacer"></span>-->
-  <!--  <button mat-button routerLink="login">-->
-  <!--    Autenticarse-->
-  <!--    <mat-icon>account_circle</mat-icon>-->
-  <!--  </button>-->
-</mat-toolbar>
-
 <mat-sidenav-container id="app-body">
+
   <mat-sidenav [opened]="sideMenuVisible" disableClose mode="side" id="app-side-menu">
-    <mat-nav-list>
+
+    <div class="brand">
+      <img src="assets/img/logo.svg" alt="Proyecciones" class="logo">
+    </div>
+
+    <mat-nav-list id="side-menu" >
       <ng-template ngFor let-link [ngForOf]="links">
         <a mat-list-item *ngIf="link.type=='item'" routerLink="{{link.path}}" routerLinkActive="selected">
           <mat-icon mat-list-icon class="active">{{link.icon}}</mat-icon>
@@ -22,8 +16,25 @@
         <mat-divider *ngIf="link.type=='divider'"></mat-divider>
       </ng-template>
     </mat-nav-list>
+
   </mat-sidenav>
-  <mat-sidenav-content id="app-content">
-    <router-outlet></router-outlet>
+
+  <mat-sidenav-content id="app-content-panel">
+    <mat-toolbar id="app-toolbar">
+      <button mat-icon-button (click)="toggleSideMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Proyecciones</span>
+      <!--  <span class="spacer"></span>-->
+      <!--  <button mat-button routerLink="login">-->
+      <!--    Autenticarse-->
+      <!--    <mat-icon>account_circle</mat-icon>-->
+      <!--  </button>-->
+    </mat-toolbar>
+
+    <div id="app-content">
+      <router-outlet></router-outlet>
+    </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
