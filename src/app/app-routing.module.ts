@@ -19,17 +19,17 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: '', component: MainLayoutComponent, children: [
-      {path: 'home', component: HomeComponent},
-      {path: 'events', component: EventsComponent},
-      {path: 'praying-calendar', component: PrayingCalendarComponent},
-      {path: 'anniversaries', component: AnniversariesComponent},
-      {path: 'directory', component: DirectoryComponent},
+      {path: 'home', component: HomeComponent, data: {title: 'Inicio'}},
+      {path: 'events', component: EventsComponent, data: {title: 'Eventos'}},
+      {path: 'praying-calendar', component: PrayingCalendarComponent, data: {title: 'Calendario de oración'}},
+      {path: 'anniversaries', component: AnniversariesComponent, data: {title: 'Aniversarios'}},
+      {path: 'directory', component: DirectoryComponent, data: {title: 'Directorio'}},
 
-      {path: 'settings', component: SettingsComponent},
+      {path: 'settings', component: SettingsComponent, data: {title: 'Configuración'}},
 
-      {path: 'terms', component: TermsComponent},
-      {path: 'about', component: AboutComponent},
-      {path: 'donate', component: DonateComponent},
+      {path: 'terms', component: TermsComponent, data: {title: 'Términos y condiciones'}},
+      {path: 'about', component: AboutComponent, data: {title: 'Acerca de Proyecciones'}},
+      {path: 'donate', component: DonateComponent, data: {title: 'Donar'}},
 
       {path: 'daily-reading-calendar', component: DailyReadingCalendarComponent},
     ]

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router, RouterState} from "@angular/router";
 
 export interface Link {
   type: string;
@@ -13,6 +14,9 @@ export interface Link {
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit {
+
+  title = 'Proyecciones';
+
   links: Link[] = [
     {type: 'item', path: 'home', icon: 'home', label: 'Inicio'},
     {type: 'item', path: 'events', icon: 'date_range', label: 'Eventos'},
