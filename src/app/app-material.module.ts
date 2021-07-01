@@ -9,6 +9,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatCardModule} from "@angular/material/card";
 import {MatRippleModule} from "@angular/material/core";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {MatRippleModule} from "@angular/material/core";
     MatMenuModule,
     MatCardModule,
     MatRippleModule,
+    MatSnackBarModule,
   ]
 })
 export class AppMaterialModule {
