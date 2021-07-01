@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router, RouterState} from "@angular/router";
+import {ActivatedRoute, Data, NavigationEnd, Router} from "@angular/router";
 
 export interface Link {
   type: string;
@@ -33,10 +33,23 @@ export class MainLayoutComponent implements OnInit {
 
   sideMenuVisible = true;
 
-  constructor() {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.getRouteTitle();
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.getRouteTitle();
+      }
+    });
+  }
+
+  private getRouteTitle() {
+    this.activatedRoute.firstChild?.data.subscribe(data => {
+      this.title = data.title;
+    });
   }
 
   toggleSideMenu() {
