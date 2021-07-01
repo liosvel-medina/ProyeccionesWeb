@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Data, NavigationEnd, Router} from "@angular/router";
+import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
+import {MatDrawerMode} from "@angular/material/sidenav";
 
 export interface Link {
   type: string;
@@ -32,8 +34,13 @@ export class MainLayoutComponent implements OnInit {
   ];
 
   sideMenuVisible = true;
+  sideMenuMode: MatDrawerMode = 'side';
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private breakpointObserver: BreakpointObserver
+  ) {
   }
 
   ngOnInit(): void {
@@ -44,6 +51,16 @@ export class MainLayoutComponent implements OnInit {
         this.getRouteTitle();
       }
     });
+
+    this.breakpointObserver
+      .observe(['(max-width: 768px)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.sideMenuMode = 'over';
+        } else {
+          this.sideMenuMode = 'side';
+        }
+      });
   }
 
   private getRouteTitle() {

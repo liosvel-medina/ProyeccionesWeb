@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppRoutingModule} from './app-routing.module';
+import {LayoutModule} from "@angular/cdk/layout";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
