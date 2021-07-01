@@ -31,7 +31,11 @@ const routes: Routes = [
       {path: 'about', component: AboutComponent, data: {title: 'Acerca de Proyecciones'}},
       {path: 'donate', component: DonateComponent, data: {title: 'Donar'}},
 
-      {path: 'daily-reading-calendar', component: DailyReadingCalendarComponent},
+      {
+        path: 'daily-reading-calendar',
+        component: DailyReadingCalendarComponent,
+        data: {title: 'Plan de lectura diario de la Biblia'}
+      },
     ]
   },
   {path: '**', redirectTo: 'home'},

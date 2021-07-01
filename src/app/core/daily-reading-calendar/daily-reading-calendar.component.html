@@ -1,1 +1,23 @@
-<p>daily-reading-calendar works!</p>
+<div class="content-area">
+
+  <div class="row">
+    <div class="col-12 offset-0 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+
+      <mat-card>
+        <mat-card-content>
+
+          <mat-list>
+            <mat-list-item *ngFor="let reading of readings">
+              <mat-icon mat-list-icon class="{{itemClass(reading.date)}}">book_mark</mat-icon>
+              <span mat-line>{{reading.verse}}</span>
+              <span mat-line>{{reading.date.toLocaleDateString()}}</span>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+
+</div>
