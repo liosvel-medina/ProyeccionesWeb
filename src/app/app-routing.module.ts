@@ -45,6 +45,10 @@ const routes: Routes = [
   declarations: [
     MainLayoutComponent,
     HomeComponent,
+    EventsComponent,
+    PrayingCalendarComponent,
+    AnniversariesComponent,
+    DirectoryComponent,
     SettingsComponent,
     TermsComponent,
     AboutComponent,
