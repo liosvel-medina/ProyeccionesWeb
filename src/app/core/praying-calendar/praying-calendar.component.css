@@ -1,0 +1,26 @@
+.content-area {
+  padding: 30px;
+}
+
+.mat-list-item .mat-line {
+}
+
+::ng-deep .mat-ink-bar {
+  bottom: unset !important;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px !important;
+  border-radius: 50px;
+  border: 2px solid rgba(70, 106, 255, 0.45);
+  background-color: rgba(70, 106, 255, 0.25) !important;
+}
+
+::ng-deep .mat-tab-label-active {
+  /*::ng-deep .mat-tab-label-active .mat-tab-label-content {*/
+  color: #466AFF !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .mat-tab-label-content {
+  font-weight: 500;
+}

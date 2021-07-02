@@ -1,1 +1,20 @@
-<p>praying-calendar works!</p>
+<div class="content-area">
+  <div class="row">
+    <div class="col">
+
+      <mat-tab-group dynamicHeight>
+        <mat-tab *ngFor="let month of months" label="{{month.name}}">
+
+          <mat-list>
+            <mat-list-item *ngFor="let motive of month.motives">
+              <mat-icon mat-list-icon>list</mat-icon>
+              <span mat-line>{{motive.motive}}</span>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+</div>
