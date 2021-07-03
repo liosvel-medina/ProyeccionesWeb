@@ -5,12 +5,12 @@
       <mat-tab-group dynamicHeight>
         <mat-tab *ngFor="let month of months" label="{{month.name}}">
 
-          <div class="row" *ngFor="let motive of month.motives">
-            <div class="col">
-              <span>{{motive.number}}</span>
-              <p>
-                {{motive.motive}}
-              </p>
+          <div class="praying-calendar-item" *ngFor="let motive of month.motives">
+            <div class="motive-day">
+              {{motive.number}}
+            </div>
+            <div class="motive-description">
+              {{motive.motive}}
             </div>
           </div>
 
