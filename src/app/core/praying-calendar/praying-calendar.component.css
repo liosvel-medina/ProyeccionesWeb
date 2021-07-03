@@ -1,5 +1,6 @@
 .content-area {
   overflow-x: hidden;
+  height: 100%;
 }
 
 ::ng-deep .mat-tab-label {
@@ -58,4 +59,12 @@
 
 .praying-calendar-item .motive-description {
   padding-left: 16px;
+}
+
+.go-up {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 24px;
+  z-index: 10;
 }

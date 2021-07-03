@@ -1,4 +1,4 @@
-<div class="content-area">
+<div class="content-area" #panel (scroll)="onScroll($event)">
   <div class="row">
     <div class="col">
 
@@ -19,4 +19,8 @@
 
     </div>
   </div>
+
+  <button mat-mini-fab class="go-up" (click)="scrollPanelToTop()" *ngIf="isGoUpVisible()">
+    <mat-icon>expand_less</mat-icon>
+  </button>
 </div>

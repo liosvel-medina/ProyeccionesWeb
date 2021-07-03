@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 
 export interface PrayingMotive {
   number: string;
@@ -16,6 +16,8 @@ export interface Month {
   styleUrls: ['./praying-calendar.component.css']
 })
 export class PrayingCalendarComponent implements OnInit {
+
+  scrollTop = 0;
 
   months: Month[] = [
     {
@@ -217,10 +219,27 @@ export class PrayingCalendarComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  @ViewChild('panel') panel: ElementRef;
+
+  constructor(panel: ElementRef) {
+    this.panel = panel;
   }
 
   ngOnInit(): void {
+  }
+
+  scrollPanelToTop() {
+    if (this.panel != undefined) {
+      this.panel.nativeElement.scrollTop = 0;
+    }
+  }
+
+  onScroll(event: any) {
+    this.scrollTop = event.target.scrollTop;
+  }
+
+  isGoUpVisible() {
+    return this.scrollTop > 48;
   }
 
 }
