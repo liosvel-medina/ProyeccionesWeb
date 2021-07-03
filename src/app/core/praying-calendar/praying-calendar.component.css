@@ -1,15 +1,18 @@
 .content-area {
-  padding: 30px;
+  overflow-x: hidden;
 }
 
-.mat-list-item .mat-line {
+::ng-deep .mat-tab-label {
+  min-width: 110px !important;
+  width: 110px !important;
 }
 
 ::ng-deep .mat-ink-bar {
   bottom: unset !important;
   top: 50%;
-  transform: translateY(-50%);
-  height: 32px !important;
+  transform: translate(10px, -50%);
+  width: 90px !important;
+  height: 28px !important;
   border-radius: 50px;
   border: 2px solid rgba(70, 106, 255, 0.45);
   background-color: rgba(70, 106, 255, 0.25) !important;
@@ -23,4 +26,8 @@
 
 ::ng-deep .mat-tab-label-content {
   font-weight: 500;
+}
+
+::ng-deep .mat-tab-body-content{
+  padding: 20px;
 }
