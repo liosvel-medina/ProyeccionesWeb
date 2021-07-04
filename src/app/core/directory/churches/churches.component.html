@@ -1,1 +1,41 @@
-<p>churches works!</p>
+<div class="content-area" #panel (scroll)="onScroll($event)">
+  <div class="row">
+    <div class="col">
+
+      <mat-tab-group dynamicHeight class="provinces">
+        <mat-tab *ngFor="let province of provinces" label="{{province.name}}">
+
+          <div class="row">
+            <div class="col-12 offset-0 col-lg-8 offset-lg-2">
+
+              <mat-card>
+                <mat-card-content *ngIf="province.churches.length!=0">
+
+                  <mat-list>
+                    <mat-list-item *ngFor="let church of province.churches">
+                      <mat-icon mat-list-icon>business</mat-icon>
+                      <span mat-line>{{church.name}}</span>
+                      <span mat-line>{{church.address}}</span>
+                    </mat-list-item>
+                  </mat-list>
+
+                </mat-card-content>
+
+                <mat-card-content *ngIf="province.churches.length==0" class="text-center">
+                  <h2>No hay Iglesias en esta provincia</h2>
+                </mat-card-content>
+              </mat-card>
+
+            </div>
+          </div>
+
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+
+  <button mat-mini-fab class="go-up" (click)="scrollPanelToTop()" *ngIf="isGoUpVisible()">
+    <mat-icon>expand_less</mat-icon>
+  </button>
+</div>

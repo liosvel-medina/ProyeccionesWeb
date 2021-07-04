@@ -4,16 +4,8 @@
 }
 
 .mat-list-icon {
-  /*font-size: 32px !important;*/
-  /*width: 32px !important;*/
-  /*height: 32px !important;*/
   color: #466AFF;
   background-color: rgba(70, 106, 255, 0.50);
-}
-
-.mat-list-icon.today {
-  color: #ff3852 !important;
-  background-color: rgba(255, 56, 82, 0.50);
 }
 
 .mat-list-item {

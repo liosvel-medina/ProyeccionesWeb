@@ -1,0 +1,71 @@
+.content-area {
+  overflow-x: hidden;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+::ng-deep .mat-tab-header {
+  background-color: #ffffff;
+}
+
+::ng-deep .provinces .mat-tab-label {
+  min-width: 130px !important;
+  width: 130px !important;
+  user-select: none;
+}
+
+::ng-deep .provinces .mat-ink-bar {
+  bottom: unset !important;
+  top: 50%;
+  transform: translate(2px, -50%);
+  width: 120px !important;
+  height: 28px !important;
+  border-radius: 50px;
+  border: 2px solid rgba(70, 106, 255, 0.45);
+  background-color: rgba(70, 106, 255, 0.25) !important;
+}
+
+::ng-deep .mat-tab-label-active {
+  color: #466AFF !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .mat-tab-label-content {
+  font-weight: 500;
+}
+
+::ng-deep .mat-tab-body-content {
+  padding: 20px;
+}
+
+.mat-list-icon {
+  color: #466AFF;
+  background-color: rgba(70, 106, 255, 0.50);
+}
+
+.mat-list-icon.today {
+  color: #ff3852 !important;
+  background-color: rgba(255, 56, 82, 0.50);
+}
+
+.mat-list-item {
+  height: 64px !important;
+}
+
+.mat-list-item .mat-line:first-of-type {
+  font-weight: 500;
+}
+
+.mat-list-item .mat-line:nth-child(2) {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+}
+
+.go-up {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 24px;
+  z-index: 10;
+}
