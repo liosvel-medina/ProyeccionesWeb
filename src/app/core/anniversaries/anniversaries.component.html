@@ -1,1 +1,31 @@
-<p>anniversaries works!</p>
+<div class="content-area" #panel (scroll)="onScroll($event)">
+  <div class="row">
+    <div class="col">
+
+      <mat-tab-group dynamicHeight>
+        <mat-tab *ngFor="let month of months" label="{{month.name}}">
+
+          <div class="anniversary-item" *ngFor="let anniversary of month.anniversaries">
+            <div class="anniversary-day">
+              {{anniversary.day}}
+            </div>
+            <div class="anniversary-text">
+              <div class="anniversary-title">
+                {{anniversary.churchName}}
+              </div>
+              <div class="anniversary-subtitle">
+                Cumple {{anniversary.age}} {{anniversary.age == 1 ? 'año' : 'años'}}
+              </div>
+            </div>
+          </div>
+
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+
+  <button mat-mini-fab class="go-up" (click)="scrollPanelToTop()" *ngIf="isGoUpVisible()">
+    <mat-icon>expand_less</mat-icon>
+  </button>
+</div>
