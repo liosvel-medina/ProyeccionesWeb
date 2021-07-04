@@ -15,6 +15,7 @@
   left: 0;
   width: 100%;
   z-index: 5;
+  background-color: #ffffff;
 }
 
 ::ng-deep .mat-tab-nav-bar.bottom-nav-bar, ::ng-deep .mat-tab-header.bottom-nav-bar {
