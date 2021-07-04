@@ -1,0 +1,13 @@
+<svg id="baseline" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M21,372H86V263L21,302v70Z"/>
+  <path id="Forma_1_copia" data-name="Forma 1 copia" class="cls-1" d="M383,372H318V263l65,39v70Z"/>
+  <path id="Forma_2" data-name="Forma 2" class="cls-1" d="M54,211L194,95V68H168V53h26V35h16V53h25V68H210V96L350,211l-17,20L201,124,71,230Z"/>
+  <path id="Forma_3" data-name="Forma 3" class="cls-1" d="M166,306v64l-65-1-1-142,102-85,101,84-1,143-63,1s-0.08-47.742-1-64C236.773,263.362,166.307,260.908,166,306Z"/>
+</svg>

@@ -17,6 +17,7 @@ import {DailyReadingCalendarComponent} from "./core/daily-reading-calendar/daily
 import {ChurchesComponent} from "./core/directory/churches/churches.component";
 import {PastorsComponent} from "./core/directory/pastors/pastors.component";
 import {PlacesComponent} from "./core/directory/places/places.component";
+import {HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -74,6 +75,7 @@ const routes: Routes = [
     AppMaterialModule,
     CommonModule,
     MatTooltipModule,
+    HttpClientModule,
   ],
   exports: [
     RouterModule,
