@@ -1,1 +1,22 @@
-<p>directory works!</p>
+<div class="content-area">
+
+  <div class="content-directory">
+    <router-outlet></router-outlet>
+  </div>
+
+  <nav mat-tab-nav-bar mat-stretch-tabs class="bottom-nav-bar">
+    <a mat-tab-link routerLink="/directory/churches" routerLinkActive="active">
+      <mat-icon>business</mat-icon>
+      <span>Iglesias</span>
+    </a>
+    <a mat-tab-link routerLink="/directory/pastors" routerLinkActive="active">
+      <mat-icon>account_box</mat-icon>
+      <span>Pastores</span>
+    </a>
+    <a mat-tab-link routerLink="/directory/places" routerLinkActive="active">
+      <mat-icon>business</mat-icon>
+      <span>Instituciones</span>
+    </a>
+  </nav>
+
+</div>

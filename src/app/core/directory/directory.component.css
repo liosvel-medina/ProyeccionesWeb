@@ -1,0 +1,31 @@
+.content-area {
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-directory {
+  height: calc(100% - 48px);
+  overflow: auto;
+}
+
+.bottom-nav-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+::ng-deep .mat-tab-nav-bar.bottom-nav-bar, ::ng-deep .mat-tab-header.bottom-nav-bar {
+  border-bottom: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+::ng-deep .bottom-nav-bar .mat-tab-link {
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep .bottom-nav-bar .mat-tab-link.active {
+  color: #466AFF;
+  opacity: 1;
+}
