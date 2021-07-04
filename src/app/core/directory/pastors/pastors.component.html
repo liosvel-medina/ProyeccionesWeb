@@ -1,1 +1,27 @@
-<p>pastors works!</p>
+<div class="content-area" #panel (scroll)="onScroll($event)">
+
+  <div class="row">
+    <div class="col-sm-12 offset-sm-0 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+
+      <mat-card>
+        <mat-card-content>
+
+          <mat-list>
+            <mat-list-item *ngFor="let pastor of pastors">
+              <mat-icon mat-list-icon>person</mat-icon>
+              <span mat-line>{{pastor.name}}</span>
+              <span mat-line>{{pastor.place}}</span>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+
+  <button mat-mini-fab class="go-up" (click)="scrollPanelToTop()" *ngIf="isGoUpVisible()">
+    <mat-icon>expand_less</mat-icon>
+  </button>
+
+</div>
