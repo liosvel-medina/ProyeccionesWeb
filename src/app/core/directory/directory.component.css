@@ -13,11 +13,11 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 5;
 }
 
 ::ng-deep .mat-tab-nav-bar.bottom-nav-bar, ::ng-deep .mat-tab-header.bottom-nav-bar {
-  border-bottom: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border: none;
 }
 
 ::ng-deep .bottom-nav-bar .mat-tab-link {
@@ -28,4 +28,8 @@
 ::ng-deep .bottom-nav-bar .mat-tab-link.active {
   color: #466AFF;
   opacity: 1;
+}
+
+::ng-deep .bottom-nav-bar .mat-ink-bar {
+  display: none;
 }
