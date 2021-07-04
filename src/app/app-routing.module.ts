@@ -14,6 +14,9 @@ import {AnniversariesComponent} from "./core/anniversaries/anniversaries.compone
 import {DirectoryComponent} from "./core/directory/directory.component";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {DailyReadingCalendarComponent} from "./core/daily-reading-calendar/daily-reading-calendar.component";
+import {ChurchesComponent} from "./core/directory/churches/churches.component";
+import {PastorsComponent} from "./core/directory/pastors/pastors.component";
+import {PlacesComponent} from "./core/directory/places/places.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -23,7 +26,14 @@ const routes: Routes = [
       {path: 'events', component: EventsComponent, data: {title: 'Eventos'}},
       {path: 'praying-calendar', component: PrayingCalendarComponent, data: {title: 'Calendario de oración'}},
       {path: 'anniversaries', component: AnniversariesComponent, data: {title: 'Aniversarios'}},
-      {path: 'directory', component: DirectoryComponent, data: {title: 'Directorio'}},
+      {
+        path: 'directory', component: DirectoryComponent, data: {title: 'Directorio'},
+        children: [
+          {path: 'churches', component: ChurchesComponent},
+          {path: 'pastors', component: PastorsComponent},
+          {path: 'places', component: PlacesComponent},
+        ]
+      },
 
       {path: 'settings', component: SettingsComponent, data: {title: 'Configuración'}},
 
@@ -49,6 +59,9 @@ const routes: Routes = [
     PrayingCalendarComponent,
     AnniversariesComponent,
     DirectoryComponent,
+    ChurchesComponent,
+    PastorsComponent,
+    PlacesComponent,
     SettingsComponent,
     TermsComponent,
     AboutComponent,
