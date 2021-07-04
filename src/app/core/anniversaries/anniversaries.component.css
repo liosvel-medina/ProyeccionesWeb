@@ -1,6 +1,11 @@
 .content-area {
   overflow-x: hidden;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+::ng-deep .mat-tab-header {
+  background-color: #ffffff;
 }
 
 ::ng-deep .mat-tab-label {

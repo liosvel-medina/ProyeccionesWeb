@@ -5,17 +5,33 @@
       <mat-tab-group dynamicHeight>
         <mat-tab *ngFor="let month of months" label="{{month.name}}">
 
-          <div class="anniversary-item" *ngFor="let anniversary of month.anniversaries">
-            <div class="anniversary-day">
-              {{anniversary.day}}
-            </div>
-            <div class="anniversary-text">
-              <div class="anniversary-title">
-                {{anniversary.churchName}}
-              </div>
-              <div class="anniversary-subtitle">
-                Cumple {{anniversary.age}} {{anniversary.age == 1 ? 'año' : 'años'}}
-              </div>
+          <div class="row">
+            <div class="col-12 offset-0 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+
+              <mat-card>
+                <mat-card-content *ngIf="month.anniversaries.length!=0">
+
+                  <div class="anniversary-item" *ngFor="let anniversary of month.anniversaries">
+                    <div class="anniversary-day">
+                      {{anniversary.day}}
+                    </div>
+                    <div class="anniversary-text">
+                      <div class="anniversary-title">
+                        {{anniversary.churchName}}
+                      </div>
+                      <div class="anniversary-subtitle">
+                        Cumple {{anniversary.age}} {{anniversary.age == 1 ? 'año' : 'años'}}
+                      </div>
+                    </div>
+                  </div>
+
+                </mat-card-content>
+
+                <mat-card-content *ngIf="month.anniversaries.length==0" class="text-center">
+                  <h2>No hay aniversarios este mes</h2>
+                </mat-card-content>
+              </mat-card>
+
             </div>
           </div>
 

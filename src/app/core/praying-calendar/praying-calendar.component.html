@@ -5,12 +5,28 @@
       <mat-tab-group dynamicHeight>
         <mat-tab *ngFor="let month of months" label="{{month.name}}">
 
-          <div class="praying-calendar-item" *ngFor="let motive of month.motives">
-            <div class="motive-day">
-              {{motive.number}}
-            </div>
-            <div class="motive-description">
-              {{motive.motive}}
+          <div class="row">
+            <div class="col-12 offset-0 col-lg-8 offset-lg-2">
+
+              <mat-card>
+                <mat-card-content *ngIf="month.motives.length!=0">
+
+                  <div class="praying-calendar-item" *ngFor="let motive of month.motives">
+                    <div class="motive-day">
+                      {{motive.number}}
+                    </div>
+                    <div class="motive-description">
+                      {{motive.motive}}
+                    </div>
+                  </div>
+
+                </mat-card-content>
+
+                <mat-card-content *ngIf="month.motives.length==0" class="text-center">
+                  <h2>No hay motivos de oración este mes</h2>
+                </mat-card-content>
+              </mat-card>
+
             </div>
           </div>
 
