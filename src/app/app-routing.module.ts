@@ -32,6 +32,7 @@ const routes: Routes = [
           {path: 'churches', component: ChurchesComponent},
           {path: 'pastors', component: PastorsComponent},
           {path: 'places', component: PlacesComponent},
+          {path: '', redirectTo: 'churches', pathMatch: 'full'}
         ]
       },
 
