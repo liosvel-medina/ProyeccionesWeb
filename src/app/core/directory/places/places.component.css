@@ -1,0 +1,32 @@
+.content-area {
+  padding: 20px 30px;
+  overflow-x: hidden;
+  height: calc(100% - 40px);
+}
+
+.mat-list-icon {
+  color: #466AFF;
+  background-color: rgba(70, 106, 255, 0.50);
+}
+
+.mat-list-item {
+  height: 64px !important;
+}
+
+.mat-list-item .mat-line:first-of-type {
+  font-weight: 500;
+}
+
+.mat-list-item .mat-line:nth-child(2) {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+}
+
+.go-up {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 24px;
+  z-index: 10;
+}
