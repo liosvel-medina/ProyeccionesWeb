@@ -19,6 +19,8 @@ import {PastorsComponent} from "./core/directory/pastors/pastors.component";
 import {PlacesComponent} from "./core/directory/places/places.component";
 import {HttpClientModule} from "@angular/common/http";
 
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
@@ -76,6 +78,7 @@ const routes: Routes = [
     CommonModule,
     MatTooltipModule,
     HttpClientModule,
+    ScheduleModule,
   ],
   exports: [
     RouterModule,
