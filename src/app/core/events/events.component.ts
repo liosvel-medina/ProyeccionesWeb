@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {
   DayService,
   WeekService,
@@ -8,11 +8,12 @@ import {
   MonthAgendaService,
   TimelineViewsService,
   TimelineMonthService,
-  EventSettingsModel,
+  EventSettingsModel, ScheduleComponent,
 } from '@syncfusion/ej2-angular-schedule';
+import {L10n, loadCldr} from '@syncfusion/ej2-base';
 
 let dictionary = {
-  "en": {
+  "es": {
     "schedule": {
       "day": "Día",
       "week": "Semana",
@@ -29,7 +30,7 @@ let dictionary = {
       "allDay": "Todo el día",
       "start": "Inicio",
       "end": "Fin",
-      "more": "má",
+      "more": "más",
       "close": "Cerrar",
       "cancel": "Cancelar",
       "noTitle": "(Sin título)",
@@ -129,9 +130,22 @@ let dictionary = {
       "monthExpander": "Month Expander",
       "yearExpander": "Year Expander",
       "repeatInterval": "Repeat Interval"
-    }
+    },
+    "calendar": {
+      "today": "Hoy"
+    },
   }
 };
+
+declare let require: Function;
+loadCldr(
+  require('../../../../node_modules/cldr-data/supplemental/numberingSystems.json'),
+  require('../../../../node_modules/cldr-data/main/es/ca-gregorian.json'),
+  require('../../../../node_modules/cldr-data/main/es/currencies.json'),
+  require('../../../../node_modules/cldr-data/main/es/numbers.json'),
+  require('../../../../node_modules/cldr-data/main/es/timeZoneNames.json')
+);
+L10n.load(dictionary);
 
 @Component({
   selector: 'app-events',
