@@ -13,6 +13,7 @@ import {
 import {L10n, loadCldr} from '@syncfusion/ej2-base';
 
 import {dictionary} from "./es-dictionary";
+import {dataSource} from "./dataSource";
 
 declare let require: Function;
 loadCldr(
@@ -37,7 +38,7 @@ export class EventsComponent implements OnInit {
     allowAdding: false,
     allowDeleting: false,
     allowEditing: false,
-    dataSource: []
+    dataSource: dataSource
   };
 
   constructor() {
