@@ -1,3 +1,22 @@
 .content-area {
   height: 100%;
 }
+
+/*::ng-deep .events-calendar td.e-work-cells {*/
+/*  background-color: rgba(70, 108, 255, 0.11);*/
+/*}*/
+
+::ng-deep .events-calendar .e-schedule .e-month-view .e-work-cells:not(.e-work-days),
+::ng-deep .events-calendar .e-schedule .e-month-agenda-view .e-work-cells:not(.e-work-days) {
+  background-color: rgba(70, 108, 255, 0.10);
+}
+
+::ng-deep .events-calendar .e-schedule .e-month-view .e-work-cells:not(.e-work-days):hover,
+::ng-deep .events-calendar .e-schedule .e-month-agenda-view .e-work-cells:not(.e-work-days):hover {
+  background-color: rgba(70, 108, 255, 0.15);
+}
+
+::ng-deep .events-calendar .e-schedule .e-month-view .e-work-cells.e-selected-cell:not(.e-work-days),
+::ng-deep .events-calendar .e-schedule .e-month-agenda-view .e-work-cells.e-selected-cell:not(.e-work-days) {
+  background-color: rgba(70, 108, 255, 0.20);
+}
