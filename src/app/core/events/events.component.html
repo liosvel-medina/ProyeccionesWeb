@@ -12,8 +12,17 @@
     height="100%"
   >
     <e-views>
-      <e-view option='Month'></e-view>
+      <e-view option='Month'>
+
+        <ng-template #eventTemplate let-event>
+          <div class="template-wrapper" [style.backgroundColor]="event.CategoryColor">
+            {{event.Subject}}
+          </div>
+        </ng-template>
+
+      </e-view>
     </e-views>
+
   </ejs-schedule>
 
 </div>
