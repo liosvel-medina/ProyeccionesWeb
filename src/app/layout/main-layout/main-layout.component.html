@@ -32,7 +32,7 @@
       <!--  </button>-->
     </mat-toolbar>
 
-    <mat-progress-bar mode="indeterminate" id="loading-progress-bar"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" id="loading-progress-bar" *ngIf="isLoading"></mat-progress-bar>
 
     <div id="app-content">
       <router-outlet></router-outlet>
