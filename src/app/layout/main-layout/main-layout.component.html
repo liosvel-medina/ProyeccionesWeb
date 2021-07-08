@@ -30,9 +30,9 @@
       <!--    Autenticarse-->
       <!--    <mat-icon>account_circle</mat-icon>-->
       <!--  </button>-->
+      <mat-progress-bar mode="indeterminate" id="loading-progress-bar" *ngIf="true"></mat-progress-bar>
     </mat-toolbar>
 
-    <mat-progress-bar mode="indeterminate" id="loading-progress-bar" *ngIf="isLoading"></mat-progress-bar>
 
     <div id="app-content">
       <router-outlet (activate)="onActivate($event)"></router-outlet>
