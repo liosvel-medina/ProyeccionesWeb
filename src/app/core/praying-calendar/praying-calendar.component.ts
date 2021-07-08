@@ -10,6 +10,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {config} from '../../api/config';
 import {PrayingMotive, Response} from "../../api/praying-motives";
+import {months} from '../../app.config';
 
 export interface Month {
   name: string;
@@ -27,7 +28,7 @@ export class PrayingCalendarComponent implements OnInit {
 
   scrollTop = 0;
 
-  months: Month[] = [];
+  tabs: Month[] = [];
 
   @ViewChild('panel') panel: ElementRef;
 
@@ -36,23 +37,38 @@ export class PrayingCalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initContent();
+    this.requestContent();
   }
 
-  initContent(): void {
+  requestContent(): void {
     this.isLoadingEvent.emit(true);
 
     this.http.get<Response>(config.urls.prayingMotives, {params: {limit: 366}}).subscribe(
       response => {
-        this.months.push(<Month>{name: 'Enero', motives: response.results});
+        this.isLoadingEvent.emit(false);
+        this.initContent(response);
       },
       error => {
+        this.isLoadingEvent.emit(false);
         console.error('error', error);
       },
       () => {
-        this.isLoadingEvent.emit(false);
       }
     )
+  }
+
+  private initContent(response: Response) {
+    for (const month of months) {
+      this.tabs.push(<Month>{name: month, motives: []});
+    }
+
+    const results = response.results || [];
+    const size = results.length;
+    for (let i = 0; i < size; i++) {
+      let item = results[i];
+      let month = Number(item.date.split('-')[1]) - 1;
+      this.tabs[month].motives.push(item);
+    }
   }
 
   getDay(prayingMotive: PrayingMotive) {
