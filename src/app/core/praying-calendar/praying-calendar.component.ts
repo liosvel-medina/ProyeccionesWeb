@@ -1,4 +1,11 @@
-import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 import {config} from '../../api/config';
@@ -16,6 +23,8 @@ export interface Month {
 })
 export class PrayingCalendarComponent implements OnInit {
 
+  @Output() isLoadingEvent = new EventEmitter<boolean>();
+
   scrollTop = 0;
 
   months: Month[] = [];
@@ -31,12 +40,17 @@ export class PrayingCalendarComponent implements OnInit {
   }
 
   initContent(): void {
+    this.isLoadingEvent.emit(true);
+
     this.http.get<Response>(config.urls.prayingMotives, {params: {limit: 366}}).subscribe(
       response => {
         this.months.push(<Month>{name: 'Enero', motives: response.results});
       },
       error => {
         console.error('error', error);
+      },
+      () => {
+        this.isLoadingEvent.emit(false);
       }
     )
   }

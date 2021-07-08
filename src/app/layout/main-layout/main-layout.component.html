@@ -35,7 +35,7 @@
     <mat-progress-bar mode="indeterminate" id="loading-progress-bar" *ngIf="isLoading"></mat-progress-bar>
 
     <div id="app-content">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
     </div>
 
   </mat-sidenav-content>

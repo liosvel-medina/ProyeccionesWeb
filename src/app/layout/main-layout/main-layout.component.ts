@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {ActivatedRoute, Data, NavigationEnd, Router} from "@angular/router";
 import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
 import {MatDrawerMode} from "@angular/material/sidenav";
@@ -37,6 +37,7 @@ export class MainLayoutComponent implements OnInit {
   sideMenuMode: MatDrawerMode = 'side';
 
   isLoading = false;
+  isLoadingEvent = new EventEmitter<boolean>();
 
   constructor(
     private router: Router,
@@ -73,6 +74,19 @@ export class MainLayoutComponent implements OnInit {
 
   toggleSideMenu() {
     this.sideMenuVisible = !this.sideMenuVisible
+  }
+
+  onActivate(event: any) {
+    this.isLoadingEvent.unsubscribe();
+    let isLoadingEvent: EventEmitter<boolean> = event.isLoadingEvent;
+    if (isLoadingEvent) {
+      this.isLoadingEvent = isLoadingEvent;
+      this.isLoadingEvent.subscribe(isLoading => {
+        setTimeout(() => {
+          this.isLoading = isLoading;
+        }, 150);
+      })
+    }
   }
 
 }
