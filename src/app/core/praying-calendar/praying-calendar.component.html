@@ -13,7 +13,7 @@
 
                   <div class="praying-calendar-item" *ngFor="let motive of month.motives">
                     <div class="motive-day">
-                      {{motive.number}}
+                      {{getDay(motive)}}
                     </div>
                     <div class="motive-description">
                       {{motive.motive}}
