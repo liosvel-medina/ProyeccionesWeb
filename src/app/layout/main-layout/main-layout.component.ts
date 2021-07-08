@@ -36,6 +36,8 @@ export class MainLayoutComponent implements OnInit {
   sideMenuVisible = true;
   sideMenuMode: MatDrawerMode = 'side';
 
+  isLoading = false;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,

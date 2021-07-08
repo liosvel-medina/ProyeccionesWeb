@@ -11,6 +11,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatRippleModule} from "@angular/material/core";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatTabsModule} from "@angular/material/tabs";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatRippleModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class AppMaterialModule {
