@@ -1,4 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+
+import {config} from "../../api/config";
+import {PrayingMotive} from "../../api/praying-motives";
 
 export enum EventType {
   default,
@@ -28,6 +32,8 @@ export interface TodayAnniversary {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  isLoadingEvent = new EventEmitter<boolean>();
 
   eventColors = {
     default: '#33344c',
@@ -60,7 +66,7 @@ export class HomeComponent implements OnInit {
     // {name: 'Graduación del Seminario', type: EventType.study, participants: 'Estudiantes del Seminario'},
   ];
 
-  todayPrayingMotive = "Hoy cumple años la misionera Evarina Matos, que trabaja en Caimito y Mojica, Mariel, (AR). Oremos por las femeniles de la Obra Bautista. ¡HOY ES EL DÍA DE LA MUJER BAUTISTA!";
+  todayPrayingMotive = "";
 
   todayAnniversaries: TodayAnniversary[] = [
     // {name: 'Iglesia Bautista de Jagüey Grande', age: 'Cumple 20 años'},
@@ -69,10 +75,11 @@ export class HomeComponent implements OnInit {
     // {name: 'Iglesia Bautista de Santa Clara', age: 'Cumple 25 años'},
   ];
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
+    this.requestContent()
   }
 
   getColor(event: TodayEvent): string {
@@ -119,4 +126,21 @@ export class HomeComponent implements OnInit {
     return icon;
   }
 
+  private requestContent() {
+    this.requestTodayPrayingMotive()
+  }
+
+  private requestTodayPrayingMotive() {
+    this.isLoadingEvent.emit(true);
+
+    this.http.get<PrayingMotive>(config.urls.prayingMotivesByDate).subscribe(
+      motive => {
+        this.isLoadingEvent.emit(false);
+        this.todayPrayingMotive = motive.motive;
+      },
+      error => {
+        this.isLoadingEvent.emit(false);
+      }
+    );
+  }
 }

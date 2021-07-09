@@ -74,8 +74,13 @@
     <div class="row section-content">
       <div class="col">
 
-        <div class="blockquote">
+        <div class="blockquote" *ngIf="todayPrayingMotive!==''">
           {{todayPrayingMotive}}
+        </div>
+
+        <div class="blockquote d-flex" *ngIf="todayPrayingMotive===''">
+          <mat-spinner mode="indeterminate" diameter="20"></mat-spinner>
+          <span class="ms-3">Cargando</span>
         </div>
 
       </div>
